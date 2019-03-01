@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"interfc/inherit"
+	"interface/inherit"
 )
 
 type Humaner interface {
@@ -43,6 +43,10 @@ func WhoSayHi(i Humaner) {
 }
 
 func main() {
+
+	/*****************多态*****************/
+	fmt.Printf("*****************多态1*****************\n")
+
 	//实例化三个变量
 	s := &Student{"mike", 666}
 	t := &Teacher{"wh", "golang"}
@@ -52,6 +56,8 @@ func main() {
 	WhoSayHi(s)
 	WhoSayHi(t)
 	WhoSayHi(&str)
+
+	fmt.Printf("*****************多态2*****************\n")
 
 	//创建一个切片
 	x := make([]Humaner, 3)
@@ -65,6 +71,7 @@ func main() {
 	}
 
 	/*****************继承*****************/
+	fmt.Printf("*****************继承*****************\n")
 
 	//定义一个接口类型的变量
 	var i inherit.Personer
@@ -72,6 +79,18 @@ func main() {
 	i = sd
 	i.Sayhi() //继承过来的方法
 	i.Sing("学习歌")
+
+	/*****************转换*****************/
+	fmt.Printf("*****************转换*****************\n")
+
+	var iPro inherit.Personer //超集
+	iPro = &inherit.Student{"duyong", 3333}
+	var d inherit.Humaner //子集
+
+	//iPro = i //err
+
+	d = iPro //可以，超集可以转换为子集
+	d.Sayhi()
 
 }
 

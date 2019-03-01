@@ -2,11 +2,11 @@ package inherit
 
 import "fmt"
 
-type Humaner interface {
+type Humaner interface { //子集
 	Sayhi()
 }
 
-type Personer interface {
+type Personer interface { //超集
 	Humaner //匿名字段，继承了sayhi()
 	Sing(lrc string)
 }
