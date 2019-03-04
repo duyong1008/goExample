@@ -1,8 +1,8 @@
 package main
 
 import (
+	"base5/interfaceerface/inherit"
 	"fmt"
-	"interface/inherit"
 )
 
 type Humaner interface {

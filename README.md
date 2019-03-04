@@ -16,3 +16,9 @@
 - 正则表达式
 #### string
 - 字符串处理
+#### cachechannel
+- Channel
+#### channelinteraction
+- Channel交互
+#### channelSync
+- Channel同步
